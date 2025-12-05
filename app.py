@@ -923,9 +923,16 @@ def main():
     # Add error handler
     application.add_error_handler(error_handler)
     
-    # Start the Bot
-    print("Bot is running on port 5000...")
-    application.run_webhook(listen="0.0.0.0", port=5000)
+    # Start the Bot with Webhook
+    PORT = 5000
+    WEBHOOK_URL = "https://drgvfdgwhrth.onrender.com"
+    
+    print(f"Bot is running on port {PORT}...")
+    application.run_webhook(
+        listen="0.0.0.0",
+        port=PORT,
+        webhook_url=f"{WEBHOOK_URL}/{TELEGRAM_BOT_TOKEN}"
+    )
 
 if __name__ == '__main__':
     main()
