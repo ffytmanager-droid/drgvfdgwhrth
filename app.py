@@ -922,6 +922,7 @@ def main():
     
     # Add error handler
     application.add_error_handler(error_handler)
+    application.run_webhook(listen="0.0.0.0", port=5000)
     
     # Start the Bot
     print("Bot is running...")
